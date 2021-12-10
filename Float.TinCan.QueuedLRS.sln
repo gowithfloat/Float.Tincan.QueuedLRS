@@ -1,0 +1,34 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Float.TinCan.QueuedLRS.Shared", "Float.TinCan.QueuedLRS.Shared\Float.TinCan.QueuedLRS.Shared.shproj", "{5768DF0D-3B42-41A3-AF8D-EB0BCFDD2B2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Float.TinCan.QueuedLRS.Tests", "Float.TinCan.QueuedLRS.Tests\Float.TinCan.QueuedLRS.Tests.csproj", "{A6BA995F-CB69-45A2-BA8A-CAD821711012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Float.TinCan.QueuedLRS", "Float.TinCan.QueuedLRS\Float.TinCan.QueuedLRS.csproj", "{17582E89-E11F-41E1-B76B-95954F7CD75F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6BA995F-CB69-45A2-BA8A-CAD821711012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BA995F-CB69-45A2-BA8A-CAD821711012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BA995F-CB69-45A2-BA8A-CAD821711012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BA995F-CB69-45A2-BA8A-CAD821711012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17582E89-E11F-41E1-B76B-95954F7CD75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17582E89-E11F-41E1-B76B-95954F7CD75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17582E89-E11F-41E1-B76B-95954F7CD75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17582E89-E11F-41E1-B76B-95954F7CD75F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.StandardHeader = $2
+		$0.VersionControlPolicy = $3
+		description = Allows xAPI statements to be queued offline and delivered to the LRS later.
+		version = 0.9.6
+	EndGlobalSection
+EndGlobal
