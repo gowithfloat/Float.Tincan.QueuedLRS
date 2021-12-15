@@ -38,6 +38,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Responses\" />
+    <Folder Include="Stores\" />
+    <Folder Include="Triggers\" />
   </ItemGroup>
-  <Import Project="..\Float.TinCan.QueuedLRS.Shared\Float.TinCan.QueuedLRS.Shared.projitems" Label="Shared" />
+  <ItemGroup>
+    <None Remove="Responses\" />
+    <None Remove="Stores\" />
+    <None Remove="Triggers\" />
+  </ItemGroup>
 </Project>
