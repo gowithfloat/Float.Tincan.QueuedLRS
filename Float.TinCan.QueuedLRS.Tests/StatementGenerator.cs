@@ -48,7 +48,7 @@ namespace Float.TinCan.QueuedLRS.Tests
                 verb = new Verb(verbId),
                 target = new Activity
                 {
-                    id = "http://example.com/activities/example-activity"
+                    id = new System.Uri("http://example.com/activities/example-activity")
                 }
             };
         }

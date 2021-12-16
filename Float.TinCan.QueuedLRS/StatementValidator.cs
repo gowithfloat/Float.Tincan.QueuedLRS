@@ -62,12 +62,6 @@ namespace Float.TinCan.QueuedLRS
                 {
                     throw new StatementValidationException("A statement object must have an id");
                 }
-
-                // Validate the id references an absolute URI
-                if (Uri.IsWellFormedUriString(activity.id, UriKind.Absolute) == false)
-                {
-                    throw new StatementValidationException("The activity ID must be a valid absolute URI");
-                }
             }
 
             if (statement.target is StatementRef statementRef && statementRef.id == null)

@@ -665,7 +665,7 @@ namespace Float.TinCan.QueuedLRS.Tests
         {
             return new Activity
             {
-                id = $"http://example.com/{id}"
+                id = new Uri($"http://example.com/{id}")
             };
         }
 

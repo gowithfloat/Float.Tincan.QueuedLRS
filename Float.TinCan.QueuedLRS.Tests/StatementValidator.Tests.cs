@@ -64,19 +64,6 @@ namespace Float.TinCan.QueuedLRS.Tests
             RunValidation();
         }
 
-        [Fact]
-        public void TestInvalidTargetId()
-        {
-            var activity = new Activity
-            {
-                id = "https://example.com/content/1/Screen Shot 2016-12-23 at 1.12.05 PM.png?forcedownload=1"
-            };
-
-            statement.target = activity;
-
-            RunValidation();
-        }
-
         void RunValidation()
         {
             Assert.Throws<StatementValidationException>(() => StatementValidator.ValidateStatement(statement));

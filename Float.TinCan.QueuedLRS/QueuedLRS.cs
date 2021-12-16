@@ -572,7 +572,7 @@ namespace Float.TinCan.QueuedLRS
         static void CheckInputValid(Activity activity, Agent agent)
         {
             // check activity
-            if (activity == null || string.IsNullOrWhiteSpace(activity.id))
+            if (activity == null || activity.id == null)
             {
                 throw new QueuedLRSException("Invalid activity when validating input");
             }

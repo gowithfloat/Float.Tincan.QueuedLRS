@@ -36,7 +36,7 @@ namespace Float.TinCan.QueuedLRS.Tests
                 id = $"www.example.com/activities/state{index}",
                 activity = new Activity
                 {
-                    id = $"http://example.com/activities/example-activity{index}"
+                    id = new Uri($"http://example.com/activities/example-activity{index}")
                 },
                 agent = new Agent
                 {
@@ -67,7 +67,7 @@ namespace Float.TinCan.QueuedLRS.Tests
                 id = $"www.example.com/activities/state{index}",
                 activity = new Activity
                 {
-                    id = "http://example.com/activities/example-activity"
+                    id = new Uri("http://example.com/activities/example-activity")
                 },
                 agent = new Agent
                 {
@@ -99,7 +99,7 @@ namespace Float.TinCan.QueuedLRS.Tests
                 id = $"www.example.com/activities/state{index}",
                 activity = new Activity
                 {
-                    id = "http://example.com/activities/example-activity"
+                    id = new Uri("http://example.com/activities/example-activity")
                 },
                 agent = new Agent
                 {
@@ -135,7 +135,7 @@ namespace Float.TinCan.QueuedLRS.Tests
                 id = $"www.example.com/activities/state{index}",
                 activity = new Activity
                 {
-                    id = $"http://example.com/activities/example-activity{index}"
+                    id = new Uri($"http://example.com/activities/example-activity{index}")
                 },
                 agent = new Agent
                 {

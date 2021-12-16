@@ -26,7 +26,7 @@
     <DocumentationFile>bin\Release\netstandard2.0\Float.TinCan.QueuedLRS.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Float.TinCan" Version="1.0.3.24" />
+    <PackageReference Include="Float.TinCan" Version="1.0.3.28" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
