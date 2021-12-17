@@ -57,23 +57,6 @@ namespace Float.TinCan.QueuedLRS.Tests
             Assert.Null(restoredStatements);
         }
 
-        /// <summary>
-        /// The JSON statement store should allow writing from two async tasks without causing a file access exception.
-        /// </summary>
-        [Fact]
-        public void TestSimultaneousWrite()
-        {
-            var statements1 = StatementGenerator.GenerateStatements(40);
-            var statements2 = StatementGenerator.GenerateStatements(40);
-            var writeTask1 = WriteStatement(statements1);
-            var writeTask2 = WriteStatement(statements2);
-            Task.WhenAll(writeTask1, writeTask2).Wait();
-
-            // we expect that one of the sets of statements will get written, but it's not certain which one
-            // the implementation doesn't append data, and we have no way of knowing which task runs first
-            Assert.Equal(40, store.RestoreStatements().Count);
-        }
-
         async Task WriteStatement(List<Statement> statements)
         {
             await Task.Delay(100);
