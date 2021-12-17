@@ -47,23 +47,6 @@ namespace Float.TinCan.QueuedLRS.Tests
         }
 
         /// <summary>
-        /// The JSON state resource store should allow writing from two async tasks without causing a file access exception.
-        /// </summary>
-        [Fact]
-        public void TestSimultaneousWrite()
-        {
-            var stateResources1 = StateResourceGenerator.GenerateStateDocuments(40);
-            var stateResources2 = StateResourceGenerator.GenerateStateDocuments(40);
-            var writeTask1 = WriteResource(stateResources1);
-            var writeTask2 = WriteResource(stateResources2);
-            Task.WhenAll(writeTask1, writeTask2).Wait();
-
-            // we expect that one of the sets of resources will get written, but it's not certain which one
-            // the implementation doesn't append data, and we have no way of knowing which task runs first
-            Assert.Equal(40, store.RestoreStateResources().Count);
-        }
-
-        /// <summary>
         /// Any valid resources in a list should be persisted. Null references should not.
         /// </summary>
         [Fact]
