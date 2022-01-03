@@ -1,4 +1,4 @@
-## Tin Can Queued LRS
+## Tin Can Queued LRS [![Test](https://github.com/gowithfloat/Float.TinCan.QueuedLRS/actions/workflows/test.yml/badge.svg)](https://github.com/gowithfloat/Float.TinCan.QueuedLRS/actions/workflows/test.yml) [![NuGet](https://img.shields.io/nuget/v/Float.TinCan.QueuedLRS)](https://www.nuget.org/packages/Float.TinCan.QueuedLRS/)
 
 The `QueuedLRS` is an LRS queue for holding or batching statements before passing onto another `ILRS` implementation (e.g. `RemoteLRS`). Statements are queued locally until the target LRS confirms successful receipt of the statements. Any queued statements are also written to disk so that the queue can persist across sessions.
 
