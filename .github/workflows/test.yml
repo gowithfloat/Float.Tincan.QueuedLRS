@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-restore --no-build --verbosity diag --blame-hang-timeout 10s
+      run: dotnet test --no-restore --no-build --blame-hang-timeout 10s
