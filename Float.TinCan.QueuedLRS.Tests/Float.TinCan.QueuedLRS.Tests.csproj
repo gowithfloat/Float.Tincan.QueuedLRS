@@ -20,7 +20,7 @@
         <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Float.TinCan" Version="1.0.3.28" />
-    <PackageReference Include="Moq" Version="4.14.1" />
+    <PackageReference Include="Moq" Version="4.16.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Float.TinCan.QueuedLRS\Float.TinCan.QueuedLRS.csproj" />
