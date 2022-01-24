@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TinCan;
 
@@ -45,7 +46,7 @@ namespace Float.TinCan.QueuedLRS.Tests
                 {
                     mbox = "mailto:jdoe@example.com"
                 },
-                verb = new Verb(verbId),
+                verb = new Verb(new Uri(verbId)),
                 target = new Activity
                 {
                     id = new System.Uri("http://example.com/activities/example-activity")

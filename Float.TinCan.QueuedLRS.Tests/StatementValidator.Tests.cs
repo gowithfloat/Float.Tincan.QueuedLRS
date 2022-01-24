@@ -44,13 +44,6 @@ namespace Float.TinCan.QueuedLRS.Tests
         }
 
         [Fact]
-        public void TestInvalidVerb()
-        {
-            statement.verb.id = null;
-            RunValidation();
-        }
-
-        [Fact]
         public void TestMissingTarget()
         {
             statement.target = null;
