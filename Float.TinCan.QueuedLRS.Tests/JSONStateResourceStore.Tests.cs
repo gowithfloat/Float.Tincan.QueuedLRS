@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Float.TinCan.QueuedLRS.Tests
 {
-    public class JSONStateResourceStoreTests : IDisposable
+    public sealed class JSONStateResourceStoreTests : IDisposable
     {
         readonly JSONStateResourceStore store;
         readonly string storeFile;
