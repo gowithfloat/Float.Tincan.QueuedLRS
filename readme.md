@@ -2,11 +2,15 @@
 
 The `QueuedLRS` is an LRS queue for holding or batching statements before passing onto another `ILRS` implementation (e.g. `RemoteLRS`). Statements are queued locally until the target LRS confirms successful receipt of the statements. Any queued statements are also written to disk so that the queue can persist across sessions.
 
-The queue will store statements indefinitely until the queue has been flushed. At that point, a batch of statements will be forwarded to the target  LRS. If the statements were successfully received, then those statements are removed from the local queue. If an error occurs, those statements will be kept in the queue and sent again later.
+The queue will store statements indefinitely until the queue has been flushed. At that point, a batch of statements will be forwarded to the target LRS. If the statements were successfully received, then those statements are removed from the local queue. If an error occurs, those statements will be kept in the queue and sent again later.
 
 `QueuedLRS` is a great option for a mobile application looking to store statements offline and send to an LRS when an internet connection is available.
 
 ## Building
+
+First you must restore the nuget libraries
+
+     dotnet restore
 
 This project can be built using [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) or [Cake](https://cakebuild.net/). It is recommended that you build this project by invoking the bootstrap script:
 
@@ -24,6 +28,7 @@ There are a number of optional arguments that can be provided to the bootstrappe
 ## Installing
 
 ### NuGet
+
 This library is available as a NuGet via nuget.org.
 
 ## Usage
@@ -58,9 +63,9 @@ Additionally, the queue is automatically flushed when querying statements from t
 
 The queue is automatically flushed when any of the defined triggers (`IQueueFlushTrigger`) is fired. Applications can define their own triggers, but three triggers are included by default:
 
-* **PeriodicTrigger** — sends statements to the LRS periodically (e.g. every 1 minute)
-* **CompletedStatementTrigger** — sends statements to the LRS when a statement is stored that has the `completed` verb
-* **InternetConnectionTrigger** — sends statements to the LRS when an network connection becomes available after previously being unavailable
+- **PeriodicTrigger** — sends statements to the LRS periodically (e.g. every 1 minute)
+- **CompletedStatementTrigger** — sends statements to the LRS when a statement is stored that has the `completed` verb
+- **InternetConnectionTrigger** — sends statements to the LRS when an network connection becomes available after previously being unavailable
 
 ### Statement Validation
 

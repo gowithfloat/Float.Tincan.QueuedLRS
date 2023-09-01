@@ -1,21 +1,31 @@
 name: Deploy
 
 on:
-  workflow_dispatch:
+  release:
+    types: [published]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: |
+            3.1.x
+            6.0.x
+            7.0.x
+      - name: Build
+        run: ./build.sh --task=Build --configuration=Release
+      - name: Update Version
+        run: sed -i "s/<Version><\/Version>/<Version>${{ github.event.release.name }}<\/Version>/" ./Float.TinCan.QueuedLRS/Float.TinCan.QueuedLRS.csproj
+      - name: Pack and Upload
+        run: dotnet pack --configuration Release --no-restore
       - name: Deploy to NuGet
         env:
           FLOAT_NUGET_TOKEN: ${{ secrets.FLOAT_NUGET_TOKEN }}
-        run: ./build.sh --task=Deploy --configuration=Release --nugetUrl="https://api.nuget.org/v3/index.json" --nugetToken="${FLOAT_NUGET_TOKEN}"
+        run: dotnet nuget push ./Float.TinCan.QueuedLRS/bin/Release/Float.TinCan.QueuedLRS.${{ github.event.release.name }}.nupkg --api-key "${FLOAT_NUGET_TOKEN}" --source https://api.nuget.org/v3/index.json

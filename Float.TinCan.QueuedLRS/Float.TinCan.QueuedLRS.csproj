@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2;net6.0;net7.0</TargetFrameworks>
     <AssemblyName>Float.TinCan.QueuedLRS</AssemblyName>
     <AssemblyAuthor>Float</AssemblyAuthor>
     <AssemblyDescription>Allows xAPI statements to be queued offline and delivered to the LRS later.</AssemblyDescription>
@@ -11,6 +11,8 @@
     <Title>$(AssemblyName)</Title>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <LangVersion>9.0</LangVersion>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
+    <Version></Version>
   </PropertyGroup>
   <ItemGroup>
     <AdditionalFiles Include="$(SolutionDir)\stylecop.json" />
