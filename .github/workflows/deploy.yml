@@ -19,6 +19,8 @@ jobs:
             3.1.x
             6.0.x
             7.0.x
+      - name: Restore dependencies
+        run: dotnet restore      
       - name: Set Assembly Version
         run: ./build.sh --task=GitVersion --configuration=Release
       - name: Build Library
