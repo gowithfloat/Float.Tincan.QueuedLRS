@@ -24,7 +24,7 @@ jobs:
       - name: Set Assembly Version
         run: ./build.sh --task=GitVersion --configuration=Release
       - name: Build Library
-        run: dotnet build ./Float.Tincan.QueuedLRS/Float.TinCan.QueuedLRS.csproj --configuration Release --no-restore
+        run: dotnet build ./Float.TinCan.QueuedLRS/Float.TinCan.QueuedLRS.csproj --configuration Release --no-restore
       - name: Update Version
         run: sed -i "s/<Version><\/Version>/<Version>${{ github.event.release.name }}<\/Version>/" ./Float.TinCan.QueuedLRS/Float.TinCan.QueuedLRS.csproj
       - name: Pack and Upload
