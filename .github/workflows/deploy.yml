@@ -19,8 +19,10 @@ jobs:
             3.1.x
             6.0.x
             7.0.x
-      - name: Build
-        run: ./build.sh --task=Build --configuration=Release
+      - name: Set Assembly Version
+        run: ./build.sh --task=GitVersion --configuration=Release
+      - name: Build Library
+        run: dotnet build --configuration Release --no-restore
       - name: Update Version
         run: sed -i "s/<Version><\/Version>/<Version>${{ github.event.release.name }}<\/Version>/" ./Float.TinCan.QueuedLRS/Float.TinCan.QueuedLRS.csproj
       - name: Pack and Upload
